@@ -15,7 +15,7 @@ h1 {
   border-right: 2px solid black; }
 
 .tile {
-  font: 20px HelveticaNeue-Light, sans-serif;
+  font-family: HelveticaNeue-Light, sans-serif;
   color: black;
   display: table-cell;
   text-align: center;

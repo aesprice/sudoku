@@ -1,5 +1,9 @@
 function Board(solution){
-  this.boardSize = 270;
+  if(window.innerHeight <= window.innerWidth){
+    this.boardSize = window.innerHeight * 0.9;
+  }else{
+    this.boardSize = window.innerWidth * 0.9;
+  }
 
   this.solution = solution;
   this.tiles = [[],[],[],[],[],[],[],[],[]];

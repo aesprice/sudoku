@@ -1,5 +1,9 @@
 function Board(solution){
-  this.boardSize = 270;
+  if(window.innerHeight <= window.innerWidth){
+    this.boardSize = window.innerHeight * 0.9;
+  }else{
+    this.boardSize = window.innerWidth * 0.9;
+  }
 
   this.solution = solution;
   this.tiles = [[],[],[],[],[],[],[],[],[]];
@@ -42,9 +46,11 @@ $(document).ready(function(){
 
 function Tile(number, size){
   var tileSize = size;
+  var fontSize = size * 0.7;
+  
   this.number = number;
   this.correct = true;
-  this.element = $('<div/>').addClass('tile').height(tileSize).width(tileSize).text(number);
+  this.element = $('<div/>').addClass('tile').height(tileSize).width(tileSize).text(number).css('font-size', fontSize);
 }
 
 Tile.prototype.isCorrect = function(){

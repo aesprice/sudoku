@@ -63,6 +63,7 @@ module.exports = function(grunt) {
         globals: {
           $: true,
           jquery: true,
+          Board: true,
           Tile: true
         }
       },

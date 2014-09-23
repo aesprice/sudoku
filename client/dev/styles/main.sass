@@ -8,6 +8,11 @@ h1
 .board
   margin: auto
 
+  -webkit-animation: fadein 1500ms ease-in-out
+  -moz-animation: fadein 1500ms ease-in-out
+  -ms-animation: fadein 1500ms ease-in-out
+  animation: fadein 1500ms ease-in-out
+
 .board>:nth-child(3), .board>:nth-child(6)
   border-bottom: 2px solid black
 
@@ -15,8 +20,32 @@ h1
   border-right: 2px solid black
 
 .tile
-  font-family: HelveticaNeue-Light, sans-serif
-  color: black
   display: table-cell
   text-align: center
   vertical-align: middle
+
+.tileText
+  font-family: HelveticaNeue-Light, sans-serif
+  color: black
+  opacity: 0
+
+  -webkit-animation: fadein 1500ms ease-in-out 600ms forwards
+  -moz-animation: fadein 1500ms ease-in-out 600ms forwards
+  -ms-animation: fadein 1500ms ease-in-out 600ms forwards
+  animation: fadein 1500ms ease-in-out 600ms forwards
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
++keyframes(fadein)
+  0%
+    opacity: 0
+  100%
+    opacity: 1

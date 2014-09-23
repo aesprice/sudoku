@@ -1,1 +1,4 @@
 node_modules
+client/compile/scripts
+client/compile/styles
+client/compile/index.html

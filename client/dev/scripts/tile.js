@@ -1,5 +1,5 @@
-function Tile(number){
-  var tileSize = 30;
+function Tile(number, size){
+  var tileSize = size;
   this.number = number;
   this.correct = true;
   this.element = $('<div/>').addClass('tile').height(tileSize).width(tileSize).text(number);

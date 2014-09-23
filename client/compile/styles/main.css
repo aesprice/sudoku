@@ -5,6 +5,9 @@ h1 {
   font: 20px Tahoma, sans-serif;
   color: black; }
 
+.board {
+  margin: auto; }
+
 .tile {
   font: 20px Tahoma, sans-serif;
   color: black;

@@ -8,10 +8,13 @@ function Board(solution){
 
 Board.prototype.init = function(){
   for(var y = 0; y < this.solution.length; y++){
+    var row = $('<div/>').addClass('row');
+    this.element.append(row);
+    
     for(var x = 0; x < this.solution[0].length; x++){
       var tile = new Tile(this.solution[y][x]);
       this.tiles[y].push(tile);
-      this.element.append(tile.element);
+      row.append(tile.element);
     }
   }
 };

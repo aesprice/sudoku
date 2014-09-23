@@ -8,10 +8,13 @@ function Board(solution){
 
 Board.prototype.init = function(){
   for(var y = 0; y < this.solution.length; y++){
+    var row = $('<div/>').addClass('row');
+    this.element.append(row);
+    
     for(var x = 0; x < this.solution[0].length; x++){
       var tile = new Tile(this.solution[y][x]);
       this.tiles[y].push(tile);
-      this.element.append(tile.element);
+      row.append(tile.element);
     }
   }
 };
@@ -34,9 +37,10 @@ $(document).ready(function(){
 });
 
 function Tile(number){
+  var tileSize = 30;
   this.number = number;
   this.correct = true;
-  this.element = $('<div/>').addClass('tile').text(number);
+  this.element = $('<div/>').addClass('tile').height(tileSize).width(tileSize).text(number);
 }
 
 Tile.prototype.isCorrect = function(){

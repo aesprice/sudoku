@@ -1,3 +1,4 @@
 $(document).ready(function(){
-  $('body').append('<h1>Hello World!</h1>');
+  var tile = new Tile(3);
+  $('body').append(tile.element);
 });

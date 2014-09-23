@@ -35,7 +35,7 @@ module.exports = function(grunt) {
     },
     concat: {
       basic: {
-        src: ['client/dev/scripts/main.js'],
+        src: ['client/dev/scripts/*.js'],
         dest: 'client/compile/scripts/app.js'
       }
     },
@@ -62,7 +62,8 @@ module.exports = function(grunt) {
         browser: true,
         globals: {
           $: true,
-          jquery: true
+          jquery: true,
+          Tile: true
         }
       },
       gruntfile: {

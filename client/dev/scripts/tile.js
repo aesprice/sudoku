@@ -1,9 +1,3 @@
-
-$(document).ready(function(){
-  var tile = new Tile(3);
-  $('body').append(tile.element);
-});
-
 function Tile(number){
   this.number = number;
   this.correct = true;

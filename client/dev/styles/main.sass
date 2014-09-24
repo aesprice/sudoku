@@ -1,9 +1,13 @@
-body
-  background-color: white
+$lightGray: #ccc
+$darkGray: #555
 
-h1
-  font: 20px Tahoma, sans-serif
-  color: black
+html
+  height: 100%
+
+body
+  height: 100%
+  background-color: $lightGray
+  background-image: radial-gradient(circle, white, $lightGray)
 
 .board
   margin: auto
@@ -14,10 +18,10 @@ h1
   animation: fadein 1500ms ease-in-out
 
 .board>:nth-child(3), .board>:nth-child(6)
-  border-bottom: 2px solid black
+  border-bottom: 2px solid $darkGray
 
 .row>:nth-child(3), .row>:nth-child(6)
-  border-right: 2px solid black
+  border-right: 2px solid $darkGray
 
 .tile
   display: table-cell
@@ -26,7 +30,7 @@ h1
 
 .tileText
   font-family: HelveticaNeue-Light, sans-serif
-  color: black
+  color: $darkGray
   opacity: 0
 
   -webkit-animation: fadein 1500ms ease-in-out 600ms forwards

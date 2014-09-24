@@ -20,23 +20,40 @@ body
 .board>:nth-child(3), .board>:nth-child(6)
   border-bottom: 2px solid $darkGray
 
+@mixin tileDelay($n)
+  &:nth-child(#{$n}) .tileText
+    -webkit-animation: fadein 1000ms ease-in-out #{$n * 100}ms forwards
+    -moz-animation: fadein 1000ms ease-in-out #{$n * 100}ms forwards
+    -ms-animation: fadein 1000ms ease-in-out #{$n * 100}ms forwards
+    animation: fadein 1000ms ease-in-out #{$n * 100}ms forwards
+
+.row
+  @include tileDelay(1)
+  @include tileDelay(2)
+  @include tileDelay(3)
+  @include tileDelay(4)
+  @include tileDelay(5)
+  @include tileDelay(6)
+  @include tileDelay(7)
+  @include tileDelay(8)
+  @include tileDelay(9)
+
 .row>:nth-child(3), .row>:nth-child(6)
   border-right: 2px solid $darkGray
 
+  
 .tile
   display: table-cell
   text-align: center
   vertical-align: middle
+
 
 .tileText
   font-family: HelveticaNeue-Light, sans-serif
   color: $darkGray
   opacity: 0
 
-  -webkit-animation: fadein 1500ms ease-in-out 600ms forwards
-  -moz-animation: fadein 1500ms ease-in-out 600ms forwards
-  -ms-animation: fadein 1500ms ease-in-out 600ms forwards
-  animation: fadein 1500ms ease-in-out 600ms forwards
+
 
 =keyframes($name)
   @-webkit-keyframes #{$name}

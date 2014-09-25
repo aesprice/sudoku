@@ -47,15 +47,8 @@ body
     border-bottom: 2px solid $darkGray
 
 .row
-  +tileDelay(1)
-  +tileDelay(2)
-  +tileDelay(3)
-  +tileDelay(4)
-  +tileDelay(5)
-  +tileDelay(6)
-  +tileDelay(7)
-  +tileDelay(8)
-  +tileDelay(9)
+  @for $i from 1 through 9
+    +tileDelay($i)
   &>:nth-child(3), &>:nth-child(6)
     border-right: 2px solid $darkGray
 

@@ -12,5 +12,5 @@ $(document).ready(function(){
   ];
 
   var board = new Board(sampleBoard);
-  $('body').append(board.element);
+  $('.boardContainer').append(board.element);
 });

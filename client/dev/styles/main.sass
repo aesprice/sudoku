@@ -1,6 +1,9 @@
 // Variables
 $lightGray: #ccc
+$midGray: #999
 $darkGray: #555
+$correct: rgba(0, 200, 0, 0.5)
+$incorrect: rgba(2000, 0, 0, 0.5)
 
 
 // Mixins
@@ -61,10 +64,18 @@ body
 .tileText
   font-family: HelveticaNeue-Light, sans-serif
   text-align: center
-  color: $darkGray
+  color: $midGray
   opacity: 0
 
 .tileInput
   border: none
   background: none
   outline: none
+  color: $darkGray
+  transition: background 1000ms
+
+.correct
+  background: $correct
+
+.incorrect
+  background: $incorrect

@@ -35,13 +35,16 @@ Tile.prototype.check = function(){
 
 Tile.prototype.evaluate = function(){
   var inputElement = this.element.find('input').first();
-  if(inputElement.val() === ''){
-    inputElement.removeClass('correct').removeClass('incorrect');
-  }else if(inputElement.val() === this.number.toString()){
+  if(this.isCorrect()){
     inputElement.removeClass('incorrect').addClass('correct');
   }else{
     inputElement.removeClass('correct').addClass('incorrect');
   }
+};
+
+Tile.prototype.reset = function(){
+  var inputElement = this.element.find('input').first();
+  inputElement.removeClass('correct').removeClass('incorrect');
 };
 
 Tile.prototype.isCorrect = function(){

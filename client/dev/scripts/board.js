@@ -7,6 +7,7 @@ function Board(solution){
   }
 
   this.solution = solution;
+  this.complete = false;
   this.tiles = [[],[],[],[],[],[],[],[],[]];
   this.element = $('<div/>').addClass('board').height(this.boardSize).width(this.boardSize);
 
@@ -30,28 +31,49 @@ Board.prototype.init = function(){
     }
   }
 
-  this.element.change(function(){
-    if(this.isComplete()){
-      this.showResults();
-    }
-  }.bind(this));
+  this.element.change(this.update.bind(this));
 };
 
-Board.prototype.isComplete = function(){
+Board.prototype.update = function(){
+  if(this.complete){
+    this.checkCompletion();
+    if(!this.complete){
+      this.hideResults();
+    }else{
+      this.showResults();
+    }
+  }else{
+    this.checkCompletion();
+    if(this.complete){
+      this.showResults();
+    }
+  }
+};
+
+Board.prototype.checkCompletion = function(){
   for(var y = 0; y < this.tiles.length; y++){
     for(var x = 0; x < this.tiles[y].length; x++){
       if(!this.tiles[y][x].isFilled()){
-        return false;
+        this.complete = false;
+        return;
       }
     }
   }
-  return true;
+  this.complete = true;
 };
 
 Board.prototype.showResults = function(){
   for(var y = 0; y < this.tiles.length; y++){
     for(var x = 0; x < this.tiles[y].length; x++){
       this.tiles[y][x].evaluate();
+    }
+  }
+};
+
+Board.prototype.hideResults = function(){
+  for(var y = 0; y < this.tiles.length; y++){
+    for(var x = 0; x < this.tiles[y].length; x++){
+      this.tiles[y][x].reset();
     }
   }
 };

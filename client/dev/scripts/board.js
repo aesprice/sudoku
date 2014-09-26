@@ -1,10 +1,6 @@
-function Board(solution){
+function Board(solution, maxSize){
   /** Determine board size based on the dimensions of the available screen space */
-  if(window.innerHeight <= window.innerWidth){
-    this._boardSize = window.innerHeight * 0.9;
-  }else{
-    this._boardSize = window.innerWidth * 0.9;
-  }
+  this._boardSize = maxSize;
 
   this._complete = false;
   this._tiles = [[],[],[],[],[],[],[],[],[]];

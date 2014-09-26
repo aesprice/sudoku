@@ -11,6 +11,15 @@ $(document).ready(function(){
     [6,9,7,8,4,3,5,2,1]
   ];
 
-  var board = new Board(sampleBoard);
+  var maxSize;
+  if(window.innerHeight <= window.innerWidth){
+    maxSize = window.innerHeight * 0.8;
+  }else{
+    maxSize = window.innerWidth * 0.8;
+  }
+
+  $('.title').css({'font-size': (maxSize * 0.12), 'margin-bottom': (maxSize * 0.03)});
+
+  var board = new Board(sampleBoard, maxSize);
   $('.boardContainer').append(board.element);
 });

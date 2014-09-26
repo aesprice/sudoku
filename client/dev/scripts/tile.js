@@ -13,7 +13,7 @@ Tile.prototype.init = function(){
   
   var text;
   if(this.hidden){
-    text = $('<input/>').addClass('tileInput').attr('maxlength', 1).width('100%');
+    text = $('<input/>').addClass('tileInput').attr('maxlength', 1).width('90%');
     text.change(this.evaluate.bind(this));
   }else{
     text = $('<span/>').text(this.number);

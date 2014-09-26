@@ -78,3 +78,13 @@ Board.prototype.hideResults = function(){
     }
   }
 };
+
+/** Clear all inputs */
+Board.prototype.clearTiles = function(){
+  for(var y = 0; y < this._tiles.length; y++){
+    for(var x = 0; x < this._tiles[y].length; x++){
+      this._tiles[y][x].clear();
+    }
+  }
+  this.update();
+};

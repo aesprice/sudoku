@@ -31,4 +31,8 @@ $(document).ready(function(){
   $('.new').click(function(){
     board.init(sampleBoard);
   });
+
+  $('.reset').click(function(){
+    board.clearTiles();
+  });
 });

@@ -43,18 +43,31 @@ Tile.prototype.check = function(){
 
 /** Validates and adds corresponding style */
 Tile.prototype.evaluate = function(){
-  var inputElement = this.element.find('input').first();
-  if(this.isCorrect()){
-    inputElement.removeClass('incorrect').addClass('correct');
-  }else{
-    inputElement.removeClass('correct').addClass('incorrect');
+  if(this._hidden){
+    var inputElement = this.element.find('input').first();
+    if(this.isCorrect()){
+      inputElement.removeClass('incorrect').addClass('correct');
+    }else{
+      inputElement.removeClass('correct').addClass('incorrect');
+    }
   }
 };
 
 /** Removes validation style */
 Tile.prototype.reset = function(){
-  var inputElement = this.element.find('input').first();
-  inputElement.removeClass('correct').removeClass('incorrect');
+  if(this._hidden){
+    var inputElement = this.element.find('input').first();
+    inputElement.removeClass('correct').removeClass('incorrect');
+  }
+};
+
+/** Manually erases input */
+Tile.prototype.clear = function(){
+  if(this._hidden){
+    var inputElement = this.element.find('input').first();
+    inputElement.val('');
+    this._filled = false;
+  }
 };
 
 Tile.prototype.isCorrect = function(){

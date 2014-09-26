@@ -2,6 +2,8 @@ sudoku.
 ===
 A basic sudoku app with a gentle, clean aesthetic. Enter numbers with the keyboard to guess, and when the board is complete, you'll be shown what you got right and what you got wrong.
 
+You can play it [here](http://aesprice.github.io/sudoku/).
+
 ===
 ###Tech
 A handful of technologies are at the core of this app and its workflow:

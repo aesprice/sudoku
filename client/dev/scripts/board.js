@@ -11,6 +11,10 @@ function Board(solution, maxSize){
 }
 
 Board.prototype.init = function(solution){
+  this.element.empty();
+  this._complete = false;
+  this._tiles = [[],[],[],[],[],[],[],[],[]];
+
   var tileSize = this._boardSize/9;
   
   /** Create a tile for each item in our solution matrix */

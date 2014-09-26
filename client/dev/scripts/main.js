@@ -24,6 +24,11 @@ $(document).ready(function(){
   $('.title').css('font-size', titleFontSize);
   $('button').css('font-size', buttonFontSize);
 
+
   var board = new Board(sampleBoard, maxSize);
   $('.boardContainer').append(board.element);
+  
+  $('.new').click(function(){
+    board.init(sampleBoard);
+  });
 });

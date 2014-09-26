@@ -40,6 +40,9 @@ module.exports = function(grunt) {
       }
     },
     uglify: {
+      options: {
+        sourceMap: true
+      },
       basic: {
         files: {
           'client/compile/scripts/app.min.js': ['client/compile/scripts/app.js']
@@ -61,6 +64,7 @@ module.exports = function(grunt) {
         eqnull: true,
         browser: true,
         globals: {
+          console: true,
           $: true,
           jquery: true,
           Board: true,

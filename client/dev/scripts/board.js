@@ -29,4 +29,29 @@ Board.prototype.init = function(){
       row.append(tile.element);
     }
   }
+
+  this.element.change(function(){
+    if(this.isComplete()){
+      this.showResults();
+    }
+  }.bind(this));
+};
+
+Board.prototype.isComplete = function(){
+  for(var y = 0; y < this.tiles.length; y++){
+    for(var x = 0; x < this.tiles[y].length; x++){
+      if(!this.tiles[y][x].isFilled()){
+        return false;
+      }
+    }
+  }
+  return true;
+};
+
+Board.prototype.showResults = function(){
+  for(var y = 0; y < this.tiles.length; y++){
+    for(var x = 0; x < this.tiles[y].length; x++){
+      this.tiles[y][x].evaluate();
+    }
+  }
 };

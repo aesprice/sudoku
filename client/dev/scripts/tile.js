@@ -2,6 +2,7 @@ function Tile(number, size, hidden){
   this.tileSize = size;
   this.number = number;
   this.hidden = hidden;
+  this.filled = !hidden;
   this.element = $('<div/>').addClass('tile').height(this.tileSize).width(this.tileSize);
 
   this.init();
@@ -14,13 +15,22 @@ Tile.prototype.init = function(){
   var text;
   if(this.hidden){
     text = $('<input/>').addClass('tileInput').attr('maxlength', 1).width('90%');
-    text.change(this.evaluate.bind(this));
+    text.change(this.check.bind(this));
   }else{
     text = $('<span/>').text(this.number);
   }
   text.addClass('tileText').css({'font-size': fontSize, 'border-radius': borderRadius});
 
   this.element.append(text);
+};
+
+Tile.prototype.check = function(){
+  var inputElement = this.element.find('input').first();
+  if(inputElement.val() === ''){
+    this.filled = false;
+  }else{
+    this.filled = true;
+  }
 };
 
 Tile.prototype.evaluate = function(){
@@ -35,5 +45,14 @@ Tile.prototype.evaluate = function(){
 };
 
 Tile.prototype.isCorrect = function(){
-  // return this.correct;
+  if(this.hidden){
+    var inputElement = this.element.find('input').first();
+    return inputElement.val() === this.number.toString();
+  }else{
+    return true;
+  }
+};
+
+Tile.prototype.isFilled = function(){
+  return this.filled;
 };

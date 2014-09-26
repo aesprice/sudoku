@@ -1,4 +1,5 @@
 // Variables
+$font: HelveticaNeue-Light, sans-serif
 $lightGray: #ccc
 $midGray: #999
 $darkGray: #555
@@ -43,11 +44,33 @@ body
   background-color: $lightGray
   background-image: radial-gradient(circle, white, $lightGray)
 
+.header
+  position: relative
+  margin: auto
+  +animation(fadein 1500ms ease-in-out)
+
 .title
-  font-family: HelveticaNeue-Light, sans-serif
+  display: inline-block
+  font-family: $font
   text-align: center
   color: $darkGray
-  +animation(fadein 1500ms ease-in-out)
+
+.buttons
+  position: absolute
+  display: inline-block
+  right: 0px
+  bottom: 0px
+
+button
+  display: block
+  border: none
+  background: none
+  outline: none
+  margin-left: auto
+  margin-right: 0
+  padding: 0
+  font-family: $font
+  cursor: pointer
 
 .board
   margin: auto
@@ -68,7 +91,7 @@ body
   box-sizing: border-box
 
 .tileText
-  font-family: HelveticaNeue-Light, sans-serif
+  font-family: $font
   text-align: center
   color: $midGray
   opacity: 0

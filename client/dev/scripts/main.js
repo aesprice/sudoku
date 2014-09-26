@@ -17,8 +17,12 @@ $(document).ready(function(){
   }else{
     maxSize = window.innerWidth * 0.8;
   }
+  var titleFontSize = maxSize * 0.12;
+  var buttonFontSize = titleFontSize / 2.5;
 
-  $('.title').css({'font-size': (maxSize * 0.12), 'margin-bottom': (maxSize * 0.03)});
+  $('.header').width(maxSize).css('margin-bottom', maxSize * 0.03);
+  $('.title').css('font-size', titleFontSize);
+  $('button').css('font-size', buttonFontSize);
 
   var board = new Board(sampleBoard, maxSize);
   $('.boardContainer').append(board.element);
